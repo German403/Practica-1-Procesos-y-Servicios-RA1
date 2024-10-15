@@ -21,10 +21,16 @@ public class EjecutarComandos {
 
     //Ejecuta el comando especificado y devuelve el código de salida del proceso
     public int ejecutarComando(String comando) throws IOException, InterruptedException {
-        ProcessBuilder pb = new ProcessBuilder("cmd", "/c",comando);
-        Process proceso1 = pb.start();
-        int codigoSalida = proceso1.waitFor();//Introducimos la excepcion InterruptedException para el waitFor()
-        return codigoSalida;
+        try {
+            ProcessBuilder pb = new ProcessBuilder("cmd", "/c",comando);
+            Process proceso1 = pb.start();
+            int codigoSalida = proceso1.waitFor();//Introducimos la excepcion InterruptedException para el waitFor()
+            return codigoSalida;
+        }catch (Exception e) {
+            e.printStackTrace();
+            return 1;
+        }
+
     }
 
     //Ejecuta el comando y proporciona una entrada estándar al proceso.
@@ -44,9 +50,11 @@ public class EjecutarComandos {
             case 1:
                 int resultado1 = ejecutar.ejecutarComando("echo Prueba primer proceso");
                 if (resultado1 == 0){
+                    System.out.println("Resultado: " + resultado1);
                     System.out.println("El comando se ejecuto correctamente");
+                } else {
+                    System.out.println("Hubo un problema en la ejecucion");
                 }
-
                 break;
             case 2:
 
