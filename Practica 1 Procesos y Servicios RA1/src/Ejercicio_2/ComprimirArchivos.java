@@ -69,14 +69,13 @@ public class ComprimirArchivos {
 
     public static void main(String[] args) throws IOException {
         //String tar = "Practica 1 Procesos y Servicios RA1\\src\\Ejercicio_2\\archivosComprmidos.tar";//windows 10
-        String tar = "src\\\\Ejercicio_2\\\\archivosComprmidos.tar";//windows 11
+        String tar = "src\\Ejercicio_2\\archivosComprmidos.tar";//windows 11
         /*
         String[] archivosAComprimir  = {"Practica 1 Procesos y Servicios RA1\\src\\Ejercicio_2\\archivo1.txt",
-                "Practica 1 Procesos y Servicios RA1\\src\\Ejercicio_2\\archivo2.txt",
-                "Practica 1 Procesos y Servicios RA1\\src\\Ejercicio_2\\archivo3.txt"};
+                "Practica 1 Procesos y Servicios RA1\\src\\Ejercicio_2\\archivo2.txt"};
                 windows 10
          */
-        String[] archivosAComprimir  = {"src\\Ejercicio_2\\archivo1.txt", "src\\Ejercicio_2\\archivo2.txt", "src\\Ejercicio_2\\archivo3.txt"};//windows 11
+        String[] archivosAComprimir  = {"src\\Ejercicio_2\\archivo1.txt", "src\\Ejercicio_2\\archivo2.txt"};//windows 11
 
         comprobacion_Creacion_Archivos(archivosAComprimir);
         compresorArchivos(archivosAComprimir, tar);
